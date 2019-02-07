@@ -4,7 +4,6 @@
   
   - name: "Add Tenant {{apic_tenant}}"
     aci_tenant:
-      hostname: "{{apic_ip}}"
       tenant: "{{apic_tenant}}"
       state: present
       validate_certs: False
