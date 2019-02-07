@@ -1,5 +1,5 @@
 ---
-- hosts: 10.250.0.151
+- hosts: aci01
   tasks:
   
   - name: "Add Tenant {{apic_tenant}}"
