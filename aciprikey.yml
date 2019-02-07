@@ -1,0 +1,10 @@
+---
+- name: Ensure we have a certificate installed
+  aci_aaa_user_certificate:
+    host: aci01
+    username: admin
+    password: Vinson0)
+
+    aaa_user: admin
+    certificate_name: admin
+    certificate: "{{ lookup('file', 'pki/admin.crt') }}"  # This will read the certificate data from a local file
