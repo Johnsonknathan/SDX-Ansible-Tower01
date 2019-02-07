@@ -1,0 +1,6 @@
+- name: Query all tenants
+  aci_tenant:
+    host: '{{ host_name }}'
+
+    state: query
+  register: all_tenants
