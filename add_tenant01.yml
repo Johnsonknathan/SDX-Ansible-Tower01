@@ -5,6 +5,6 @@
   - name: "Add Tenant {{apic_tenant}}"
     aci_tenant:
       tenant: "{{apic_tenant}}"
-      hostsname: aci01
+      host: aci01
       state: present
       validate_certs: False
