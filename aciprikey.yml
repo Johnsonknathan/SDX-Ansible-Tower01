@@ -1,3 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  
 - name: Ensure we have a certificate installed
   aci_aaa_user_certificate:
     host: aci01
