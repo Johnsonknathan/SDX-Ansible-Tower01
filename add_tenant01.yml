@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   vars: 
-   hostname: 10.250.0.151
+   hostname: aci01
    username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
    state: present 
    password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
