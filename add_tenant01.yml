@@ -1,7 +1,11 @@
 ---
 - hosts: localhost
+  vars: 
+   hostname: 10.250.0.151
+   username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
+   state: present 
+   password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
   tasks:
-  
   - name: "Add Tenant {{apic_tenant}}"
     aci_tenant:
       tenant: "{{apic_tenant}}"
