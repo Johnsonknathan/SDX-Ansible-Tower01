@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: aci01
   vars: 
    hostname: 10.250.0.151
    username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
