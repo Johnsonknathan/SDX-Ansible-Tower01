@@ -16,5 +16,4 @@
     password: "{{ password }}"
 
     state: query
-  register: all_tenants
  
