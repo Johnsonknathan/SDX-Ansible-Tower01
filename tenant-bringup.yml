@@ -10,7 +10,7 @@
     validate_certs: no
 
   tasks:
-     - name: ENSURE APPLICATIONS TENANT EXISTS
+    - name: ENSURE APPLICATIONS TENANT EXISTS
       aci_tenant:
         host: "{{ hostname }}"
         username: "{{ username }}"
