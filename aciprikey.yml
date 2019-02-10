@@ -7,8 +7,7 @@
     username: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
     password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
     validate_certs: no
-
-- name: Ensure we have a certificate installed
+task:
   aci_aaa_user_certificate:
     host: "{{ hostname }}"
     username: "{{ username }}"
