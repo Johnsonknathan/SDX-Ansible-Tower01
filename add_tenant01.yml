@@ -1,5 +1,5 @@
 ---
-- hosts: aci01
+- hosts: aci01.mgmt.siriussdx.com
   gather_facts: no
   vars: 
    username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
