@@ -11,7 +11,7 @@
 
 - name: Query all tenants
   aci_tenant:
-    host: "{{ hostname }}"
+    hostname: "{{ hostname }}"
     username: "{{ username }}"
     password: "{{ password }}"
     state: query
