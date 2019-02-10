@@ -1,5 +1,5 @@
 ---
-- name: Query all tenants
+  - name: Query all tenants
   hosts: aci01.mgmt.siriussdx.com
   connection: local
   gather_facts: False
