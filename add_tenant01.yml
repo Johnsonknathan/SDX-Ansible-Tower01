@@ -1,17 +1,13 @@
 ---
-- hosts: aci01.mgmt.siriussdx.com
+- hosts: localhost
   gather_facts: no
-  vars: 
-   username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
-   state: present 
-   password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
   tasks:
   - name: "Add Tenant {{apic_tenant}}"
     aci_tenant:
       tenant: "{{apic_tenant}}"
-      ansible_user: "{{username}}"
-      ansible_pass: "{{password}}"
-      host: aci01
       state: present
-      validate_certs: False
       ansible_connection: local
+      hostname: aci01.mgmt.siriussdx.com
+      username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}"
+      password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
+      validate_certs: false
