@@ -1,0 +1,16 @@
+---
+- name: ENSURE APPLICATION CONFIGURATION EXISTS
+  hosts: aci01.mgmt.siriussdx.com
+  connection: local
+  gather_facts: False
+
+  tasks:
+    - name: ENSURE APPLICATIONS TENANT EXISTS
+      aci_tenant:
+        host: aci01.mgmt.siriussdx.com
+        username: admin
+        password: Vinson0)
+        state: "present"
+        validate_certs: False
+        tenant: anisble01
+        description: "Tenant Created Using Ansible"
