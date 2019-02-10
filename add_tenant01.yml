@@ -1,6 +1,11 @@
 ---
 - hosts: localhost
   gather_facts: no
+vars: 
+   host: aci01.mgmt.siriussdx.com
+   username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
+   state: present 
+   password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
   tasks:
   - name: "Add Tenant {{apic_tenant}}"
     aci_tenant:
@@ -8,6 +13,4 @@
       state: present
       ansible_connection: local
       host: aci01.mgmt.siriussdx.com
-      username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}"
-      password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
       validate_certs: false
