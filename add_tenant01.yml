@@ -11,6 +11,5 @@
     aci_tenant:
       tenant: "{{apic_tenant}}"
       state: present
-      ansible_connection: local
       host: aci01.mgmt.siriussdx.com
       validate_certs: false
