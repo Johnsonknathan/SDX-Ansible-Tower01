@@ -1,4 +1,5 @@
 ---
+- name: ENSURE PRI key EXISTS
   hosts: aci01.mgmt.siriussdx.com
   connection: local
   gather_facts: False
