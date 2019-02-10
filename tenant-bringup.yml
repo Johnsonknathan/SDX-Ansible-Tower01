@@ -13,6 +13,15 @@
     validate_certs: no
 
   tasks:
+     - name: ENSURE APPLICATIONS TENANT EXISTS
+      aci_tenant:
+        host: "{{ hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: "present"
+        validate_certs: False
+        tenant: "{{ tenant }}"
+        description: "Tenant Created Using Ansible"
     - name: ENSURE TENANT VRF EXISTS
       aci_vrf:
         host: "{{ hostname }}"
