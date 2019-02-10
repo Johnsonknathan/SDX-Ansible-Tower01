@@ -9,6 +9,8 @@
   - name: "Add Tenant {{apic_tenant}}"
     aci_tenant:
       tenant: "{{apic_tenant}}"
+      ansible_user: "{{username}}"
+      ansible_pass: "{{password}}"
       host: aci01
       state: present
       validate_certs: False
