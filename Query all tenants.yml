@@ -1,4 +1,6 @@
 ---
+- hosts: localhost
+  gather_facts: no
 - name: Query all tenants
   aci_tenant:
     host: aci01
