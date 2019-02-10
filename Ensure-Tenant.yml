@@ -1,12 +1,16 @@
 ---
-- hosts: localhost
-  gather_facts: no
-- name: Ensure tenant customer-xyz exists
-  aci_tenant:
-    host: aci01
-    username: admin
-    password: Vinson0)
+- name: ENSURE APPLICATION CONFIGURATION EXISTS
+  hosts: aci01
+  connection: local
+  gather_facts: False
 
-    tenant: customer-xyz
-    description: Customer XYZ
-    state: present
+  tasks:
+    - name: ENSURE APPLICATIONS TENANT EXISTS
+      aci_tenant:
+        host: aci01
+        username: admin
+        password: Vinson0)
+        state: "present"
+        validate_certs: False
+        tenant: anisble01
+        description: "Tenant Created Using Ansible"
