@@ -9,10 +9,10 @@
     password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
     validate_certs: no
   task:
-- name: Query all tenants
-  aci_tenant:
-    hostname: "{{ hostname }}"
-    username: "{{ username }}"
-    password: "{{ password }}"
-    state: query
+    - name: Query all tenants
+     aci_tenant:
+        hostname: "{{ hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: query
  
