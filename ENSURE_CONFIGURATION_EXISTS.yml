@@ -8,10 +8,6 @@
     username: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
     password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
     validate_certs: no
-  vars_prompt:
-    - name: "tenant"
-      prompt: "What would you like to name your Tenant?"
-      private: no
 
   tasks:
     - name: ENSURE APPLICATIONS TENANT EXISTS
