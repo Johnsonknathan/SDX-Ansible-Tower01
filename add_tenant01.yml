@@ -7,7 +7,7 @@
       tenant: "{{apic_tenant}}"
       state: present
       ansible_connection: local
-      hostname: aci01.mgmt.siriussdx.com
+      host: aci01.mgmt.siriussdx.com
       username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}"
       password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
       validate_certs: false
