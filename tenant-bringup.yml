@@ -1,17 +1,21 @@
 ---
 - name: ENSURE APPLICATION CONFIGURATION EXISTS
-  hosts: apic
+  hosts: aci01.mgmt.siriussdx.com
   connection: local
   gather_facts: False
-  vars_prompt:
-    - name: "tenant"
-      prompt: "What would you like to name your Tenant?"
-      private: no
+  vars:
+    hostname: '{{ inventory_hostname }}'
+    username: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
+    password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
+    tenant: "{{ tenant }}"
+    vrf: "{{ vrf }}"
+    bd: "{{ bd }}"
+    validate_certs: no
 
   tasks:
     - name: ENSURE TENANT VRF EXISTS
       aci_vrf:
-        host: "{{ ansible_host }}"
+        host: "{{ hostname }}"
         username: "{{ username }}"
         password: "{{ password }}"
         state: "present"
@@ -22,7 +26,7 @@
 
     - name: ENSURE TENANT BRIDGE DOMAIN EXISTS
       aci_bd:
-        host: "{{ ansible_host }}"
+        host: "{{ hostname }}"
         username: "{{ username }}"
         password: "{{ password }}"
         state: "present"
@@ -34,7 +38,7 @@
 
     - name: ENSURE BRIDGE DOMAIN SUBNET EXISTS
       aci_bd_subnet:
-        host: "{{ ansible_host }}"
+        host: "{{ hostname }}"
         username: "{{ username }}"
         password: "{{ password }}"
         state: "present"
