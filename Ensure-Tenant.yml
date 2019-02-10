@@ -1,4 +1,6 @@
 ---
+- hosts: localhost
+  gather_facts: no
 - name: Ensure tenant customer-xyz exists
   aci_tenant:
     host: aci01
