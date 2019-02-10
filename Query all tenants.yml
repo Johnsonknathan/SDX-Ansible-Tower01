@@ -1,12 +1,19 @@
 ---
-- hosts: localhost
-  gather_facts: no
-tasks:
 - name: Query all tenants
+  hosts: aci01.mgmt.siriussdx.com
+  connection: local
+  gather_facts: False
+  vars:
+    hostname: '{{ inventory_hostname }}'
+    username: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
+    password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
+    validate_certs: no
+tasks:
   aci_tenant:
-    host: aci01
-    username: admin
-    password: Vinson0)
+    host: "{{ hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
 
     state: query
   register: all_tenants
+ 
