@@ -1,5 +1,5 @@
 ---
-- hosts: database
+- hosts: aci01
   gather_facts: no
   vars: 
    username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
