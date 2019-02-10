@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: database
   gather_facts: no
   vars: 
    username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
