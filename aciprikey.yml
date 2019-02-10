@@ -1,5 +1,5 @@
 ---
- -hosts: aci01.mgmt.siriussdx.com
+  hosts: aci01.mgmt.siriussdx.com
   connection: local
   gather_facts: False
   vars:
