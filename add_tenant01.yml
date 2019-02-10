@@ -12,4 +12,4 @@
       host: aci01
       state: present
       validate_certs: False
-      delegate_to: localhost
+      ansible_connection: local
