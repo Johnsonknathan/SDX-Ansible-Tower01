@@ -12,4 +12,5 @@
       tenant: "{{apic_tenant}}"
       state: present
       host: aci01.mgmt.siriussdx.com
+      password: "{{password}}"
       validate_certs: false
