@@ -3,13 +3,18 @@
   hosts: aci01.mgmt.siriussdx.com
   connection: local
   gather_facts: False
+  vars:
+   host: aci01.mgmt.siriussdx.com
+   username: username
+   state: present 
+   password: password
 
   tasks:
     - name: ENSURE APPLICATIONS TENANT EXISTS
       aci_tenant:
         host: aci01.mgmt.siriussdx.com
-        username: admin
-        password: Vinson0)
+        username: "{{ username }}"
+        password: "{{ password }}"
         state: "present"
         validate_certs: False
         tenant: anisble01
