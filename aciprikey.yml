@@ -7,14 +7,15 @@
     username: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
     password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
     validate_certs: no
-  tasks:
- - name: Ensure we have a certificate installed
+
+- name: Ensure we have a certificate installed
   aci_aaa_user_certificate:
     host: "{{ hostname }}"
     username: "{{ username }}"
     password: "{{ password }}"
     state: "present"
     validate_certs: False
+    
     aaa_user: admin
     certificate_name: admin
     certificate: "{{ lookup('file', 'pki/admin.crt') }}"  # This will read the certificate data from a local file
