@@ -3,13 +3,20 @@
   hosts: aci01.mgmt.siriussdx.com
   connection: local
   gather_facts: False
+ vars:
+  aci_login: &aci_login
+    hostname: '{{ inventory_hostname }}'
+    username: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
+    password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
+    validate_certs: no
+
 
   tasks:
     - name: ENSURE APPLICATIONS TENANT EXISTS
       aci_tenant:
-        host: aci01.mgmt.siriussdx.com
-        username: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
-        password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
+        host: "{{ hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
         state: "present"
         validate_certs: False
         tenant: anisble01
