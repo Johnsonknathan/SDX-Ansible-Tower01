@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
+  gather_facts: no
   vars: 
-   hostname: aci01
    username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}" 
    state: present 
    password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
