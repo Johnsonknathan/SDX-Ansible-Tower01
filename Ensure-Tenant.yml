@@ -8,8 +8,8 @@
     - name: ENSURE APPLICATIONS TENANT EXISTS
       aci_tenant:
         host: aci01.mgmt.siriussdx.com
-        username: admin
-        password: Vinson0)
+        username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}"
+        password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
         state: "present"
         validate_certs: False
         tenant: anisble01
