@@ -1,6 +1,8 @@
 - name: Query all tenants
   aci_tenant:
-    host: '{{ host_name }}'
+    host: aci01
+    username: admin
+    password: Vinson0)
 
     state: query
   register: all_tenants
