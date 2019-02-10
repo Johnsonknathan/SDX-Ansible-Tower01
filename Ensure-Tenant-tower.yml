@@ -4,18 +4,13 @@
   hosts: aci01.mgmt.siriussdx.com
   connection: local
   gather_facts: False
- env_vars:
-   host: aci01.mgmt.siriussdx.com
-   username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}"
-   state: present 
-   password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
 
   tasks:
     - name: ENSURE APPLICATIONS TENANT EXISTS
       aci_tenant:
         host: aci01.mgmt.siriussdx.com
-        username: "{{ username }}"
-        password: "{{ password }}"
+        username: "{{ ansible_env.ANSIBLE_NET_USERNAME }}"
+        password: "{{ ansible_env.ANSIBLE_NET_PASSWORD }}"
         state: "present"
         validate_certs: False
         tenant: anisble01
