@@ -11,8 +11,8 @@
   task:
 - name: Query all tenants
    aci_tenant:
-        hostname: "{{ hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        state: query
+    hostname: "{{ hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    state: query
  
