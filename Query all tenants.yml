@@ -10,7 +10,7 @@
     validate_certs: no
   task:
 - name: Query all tenants
-  aci_tenant:
+   aci_tenant:
         hostname: "{{ hostname }}"
         username: "{{ username }}"
         password: "{{ password }}"
